@@ -7,6 +7,15 @@ class InvTest {
 
 		inv1.printInv();
 
+		System.out.println(inv1.searchInv(0).getItemName());
+		System.out.println();
+		inv1.addItem("Apple", 1, 1);
+		inv1.printInv();
+		System.out.println();
+
+		inv1.addItem("Orange", 2, 5);
+		inv1.printInv();
+
 	}
 
 
