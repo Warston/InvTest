@@ -16,6 +16,9 @@ class InvTest {
 		inv1.addItem("Orange", 2, 5);
 		inv1.printInv();
 
+		System.out.println(inv1.searchInv(6).getItemName());
+
+
 	}
 
 
