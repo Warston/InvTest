@@ -3,17 +3,12 @@ class Inv {
 	private int invRowSize = 5;
 	private Items [][] invGrid = new Items [invSize/invRowSize][invRowSize];
 
-
 	Inv(){
 		for (int i = 0; i < invGrid.length; i++){
 				for (int x = 0; x < invGrid[i].length; x++){
 					invGrid[i][x] = new Items("Empty", 0, 0);
 					}
-
 				}
-		
-
-
 	}
 
 	public Items searchInv(int iId){
@@ -21,14 +16,8 @@ class Inv {
 			for (Items col : row){
 				if (col.getItemId() == iId)
 					return col;
-
-
 			}
-
-
 		}
-
-		
 
 		return new Items("Error", -1, 0);
 	}
@@ -51,7 +40,6 @@ class Inv {
 
 	}
 
-
 	public void printInv(){
 		for (int i = 0; i < invGrid.length; i++){
 			for (int x = 0; x < invGrid[i].length; x++){
@@ -60,7 +48,4 @@ class Inv {
 			System.out.println();
 		}
 	}
-
-
-
 }
