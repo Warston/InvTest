@@ -1,34 +1,27 @@
 class Player {
 
-		private String name = "";
+		private String name;
 		private int health = 100;
 		private Inv inv = new Inv();
 		private int attack = 5;
 		private String location = "Home";
 
 	Player(){
-		String name = "";
-		int health = 100;
-		Inv inv = new Inv();
-		int attack = 5;
-		String location = "Home";
+		name = "";
+		health = 100;
+		inv = new Inv();
+		attack = 5;
+		location = "Home";
 	}
 
 
 	Player(String newName){
-		String name = newName;
-		int health = 100;
-		Inv inv = new Inv();
-		int attack = 5;
-		String location = "Home";
+		name = newName;
+		health = 100;
+		inv = new Inv();
+		attack = 5;
+		location = "Home";
 	}
-
-
-
-
-
-
-
 
 
 

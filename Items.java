@@ -19,6 +19,10 @@ class Items {
 
 	}
 
+	public void changeQty(int change){
+		itemQty += change;
+	}
+
 	public String getItemName(){
 		return itemName;
 	}
