@@ -14,18 +14,13 @@ class Combat {
 
 	}
 
+	public void damage(Character combatant1, Character combatant2){
+		combatant2.setHealth(combatant2.getHealth() - combatant1.getAttack());
+		System.out.printf("%s does %d damage to %s!\n", combatant1.getName(), combatant1.getAttack(), combatant2.getName());
 
-	public void damage(Player player, Enemy enemy){
-		enemy.setHealth(enemy.getHealth() - player.getAttack());
-		System.out.printf("%s does %d damage to %s!\n", player.getName(), player.getAttack(), enemy.getName());
-	
-	}
-
-	public void damage(Enemy enemy, Player player){
-		player.setHealth(player.getHealth() - enemy.getAttack());
-		System.out.printf("%s does %d damage to %s!\n", enemy.getName(), enemy.getAttack(), player.getName());
 
 	}
+
 
 
 	public void giveLoot(){
@@ -51,5 +46,19 @@ class Combat {
 		return loot;
 	}
 
+	public static void startFight(Player player1, Enemy enemy, Items loot){
+		Combat fight = new Combat(player1, enemy, loot);
+		while (fight.checkEnemyAlive()){
+			fight.damage(fight.getPlayer(), fight.getEnemy());					
+			fight.damage(fight.getEnemy(), fight.getPlayer());
+			System.out.printf("%s's health is: %d\n", player1.getName(), player1.getHealth());
+			System.out.printf("%s's health is: %d\n", enemy.getName(), enemy.getHealth());
+
+		}
+		System.out.printf("%s is victorious!\n", player1.getName());
+		player1.getInv().addItem(loot);
+		System.out.printf("You looted: %s!\n", loot.getItemName());
+
+	}
 
 }
